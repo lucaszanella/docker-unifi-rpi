@@ -1,9 +1,0 @@
-#Made so you can do cat cat_this_cheatsheet.txt on terminal and copye/paste commands
-
-#Run
-
-R=/home/$USER/unifi && sudo docker run --rm -i -t --net="host" -v $R/config:/var/lib/unifi -v $R/log:/usr/lib/unifi/logs -v $R/log2:/var/log/unifi -v $R/run:usr/lib/unifi/run -v $R/run2:/run/unifi -v $R/work:/usr/lib/unifi/work --entrypoint /bin/bash unifi
-
-#Build
-
-sudo docker build -t unifi .
