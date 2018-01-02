@@ -2,16 +2,22 @@
 
 Based on https://github.com/ryansch/docker-unifi-rpi, but simpler
 
+# Build
+ `git clone https://github.com/lucaszanella/docker-unifi-rpi && cd docker-unifi-rpi`
+`sudo docker build -t unifi .`
+
 # Run
 
 `R=/home/$USER/unifi && sudo docker run --rm -i -t --net="host" -v $R/config:/var/lib/unifi -v $R/log:/usr/lib/unifi/logs -v $R/log2:/var/log/unifi -v $R/run:/usr/lib/unifi/run -v $R/run2:/run/unifi -v $R/work:/usr/lib/unifi/work unifi`
 
-# Build
+# Run forever in background
 
-`sudo docker build -t unifi .`
+`R=/home/$USER/unifi && sudo docker run -i -t --net="host" -v $R/config:/var/lib/unifi -v $R/log:/usr/lib/unifi/logs -v $R/log2:/var/log/unifi -v $R/run:/usr/lib/unifi/run -v $R/run2:/run/unifi -v $R/work:/usr/lib/unifi/work --restart unless-stopped unifi`
 
+# How to access
 
-# Inspection
+Just go to your raspberry IP address using the browser and put `:8443`, like this:
 
-Add  `--entrypoint /bin/bash` before `unifi`
+`https://your_raspberry_ip_address:8443`
 
+Dont forget to put `https` in front of it and confirm the security exception as the certificate is self-emitted. TODO: print the certificate fingerprint upon running so you can safely confirm the security exception.
