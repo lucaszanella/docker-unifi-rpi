@@ -3,8 +3,11 @@
 Based on https://github.com/ryansch/docker-unifi-rpi, but simpler
 
 # Build
- `git clone https://github.com/lucaszanella/docker-unifi-rpi && cd docker-unifi-rpi`
-`sudo docker build -t unifi .`
+```
+git clone https://github.com/lucaszanella/docker-unifi-rpi
+cd docker-unifi-rpi
+sudo docker build -t unifi .
+```
 
 # Run
 
