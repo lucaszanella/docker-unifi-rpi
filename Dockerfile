@@ -10,7 +10,7 @@ RUN apt-get update -q -y \
 # Install any version from deb download
 # Use dpkg to mark the package for install (expect it to fail to complete the installation)
 # Use apt-get install -f to complete the installation with dependencies
-ENV UNIFI_VERSION 5.6.16-86cdeea491
+ENV UNIFI_VERSION 5.9.26-25460f7409
 RUN apt-get update && apt-get install -y --no-install-recommends wget && \
       mkdir -p /tmp/build && \
       cd /tmp/build && \
